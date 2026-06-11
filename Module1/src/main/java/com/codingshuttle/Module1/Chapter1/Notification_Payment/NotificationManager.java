@@ -1,4 +1,4 @@
-package com.codingshuttle.Module1.Notification_Payment;
+package com.codingshuttle.Module1.Chapter1.Notification_Payment;
 
 import org.springframework.stereotype.Component;
 

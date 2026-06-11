@@ -1,6 +1,6 @@
-package com.codingshuttle.Module1.Notification_Payment.Impl;
+package com.codingshuttle.Module1.Chapter1.Notification_Payment.Impl;
 
-import com.codingshuttle.Module1.Notification_Payment.PaymentService;
+import com.codingshuttle.Module1.Chapter1.Notification_Payment.PaymentService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 

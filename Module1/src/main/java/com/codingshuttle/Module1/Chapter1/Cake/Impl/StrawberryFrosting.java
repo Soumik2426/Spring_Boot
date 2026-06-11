@@ -1,6 +1,6 @@
-package com.codingshuttle.Module1.Cake.Impl;
+package com.codingshuttle.Module1.Chapter1.Cake.Impl;
 
-import com.codingshuttle.Module1.Cake.Frosting;
+import com.codingshuttle.Module1.Chapter1.Cake.Frosting;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
