@@ -1,79 +1,57 @@
 package com.codingshuttle.Module1.Chapter2.DTO;
 
+import com.codingshuttle.Module1.Chapter2.Annotations.EmployeeRoleValidation;
+import com.codingshuttle.Module1.Chapter2.Annotations.PalindromeValidation;
+import com.codingshuttle.Module1.Chapter2.Annotations.PrimeValidation;
+import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class EmployeeDTO {
     private Long Id;
+
+    @NotBlank(message = "It cannot be blank")
     private String First_Name;
+
+    @NotBlank(message = "It cannot be blank")
+    @NotEmpty(message="Last name cannot be Empty")
     private String Last_Name;
+
+    @NotBlank(message = "It cannot be blank")
+    @Pattern(regexp ="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$", message = "Provide a valid email address")
     private String Email;
+
+    @NotBlank(message = "It cannot be blank")
+    @Pattern(regexp = "^(?:\\+91|91)?[6-9]\\d{9}$", message = "Give a proper mobile number")
     private String Phn_Number;
-    private LocalDate Joinig_Date;
+
+    @NotNull(message = "It cannot be Null")
+    @Max(value = 23000, message = "Salary cannot be more than 23000")
+    @Positive(message="The salary has to be greater than zero")
+    @PalindromeValidation(message = "Salary has to be a palindrome number")
+    private Integer Salary;
+
+    @NotNull(message = "YOE cannot be null")
+    @PrimeValidation(message = "YOE has to be a prime number")
+    private Integer YOE;
+
+    @NotBlank(message = "It cannot become null")
+    @EmployeeRoleValidation(message = "Role could either be USER or ADMIN")
+    private String Role;
+
+    @NotNull(message = "It cannot be Null")
+    @FutureOrPresent(message = "Joining Date should be a future one or Present One")
+    private LocalDate Joining_Date;
+
+    @NotNull(message = "It cannot be Null")
+    @AssertTrue(message = "The Active should always be true")
     private Boolean Active;
-
-    public EmployeeDTO(Long Id, String First_Name, String Last_Name, String Email, String Phn_Number, LocalDate Joinig_Date, Boolean Active) {
-        this.Id = Id;
-        this.First_Name = First_Name;
-        this.Last_Name = Last_Name;
-        this.Email = Email;
-        this.Phn_Number = Phn_Number;
-        this.Joinig_Date = Joinig_Date;
-        this.Active = Active;
-    }
-
-    public Long getId() {
-        return Id;
-    }
-
-    public void setId(Long id) {
-        Id = id;
-    }
-
-    public String getFirst_Name() {
-        return First_Name;
-    }
-
-    public void setFirst_Name(String first_Name) {
-        First_Name = first_Name;
-    }
-
-    public String getLast_Name() {
-        return Last_Name;
-    }
-
-    public void setLast_Name(String last_Name) {
-        Last_Name = last_Name;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String email) {
-        Email = email;
-    }
-
-    public String getPhn_Number() {
-        return Phn_Number;
-    }
-
-    public void setPhn_Number(String phn_Number) {
-        Phn_Number = phn_Number;
-    }
-
-    public LocalDate getJoinig_Date() {
-        return Joinig_Date;
-    }
-
-    public void setJoinig_Date(LocalDate joinig_Date) {
-        Joinig_Date = joinig_Date;
-    }
-
-    public Boolean getActive() {
-        return Active;
-    }
-
-    public void setActive(Boolean active) {
-        Active = active;
-    }
 }
