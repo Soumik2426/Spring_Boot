@@ -16,8 +16,6 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EmployeeDTO {
-    private Long Id;
-
     @NotBlank(message = "It cannot be blank")
     private String First_Name;
 
