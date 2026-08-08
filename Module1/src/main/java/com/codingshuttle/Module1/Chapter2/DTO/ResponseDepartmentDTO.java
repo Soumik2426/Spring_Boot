@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 public class ResponseDepartmentDTO {
     private Long ID;
     private String title;
-    private String isActive;
+    private Boolean isActive;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;

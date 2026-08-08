@@ -21,7 +21,7 @@ public class CreateDepartmentDTO {
 
     @NotBlank(message = "isActive cannot be blank")
     @IsActiveValidation(message = "IsActive can only be \"true\" and \"false\"")
-    private String isActive;
+    private Boolean isActive;
 
     @NotBlank(message = "Password cannot be blank")
     @PasswordValidation(message = "The length of password should be greater than 10, it must contain an Uppercase, a " +
