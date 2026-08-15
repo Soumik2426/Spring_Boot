@@ -23,7 +23,7 @@ public class Insurance {
     private String policyNumber;
 
     @Column(nullable = false, length = 100)
-    private String provide;
+    private String provider;
 
     @Column(nullable = false)
     private LocalDate validUntil;

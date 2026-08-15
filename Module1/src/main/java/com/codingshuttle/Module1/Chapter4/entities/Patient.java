@@ -4,6 +4,7 @@ import com.codingshuttle.Module1.Chapter4.entities.type.BloodGroupType;
 import com.codingshuttle.Module1.Chapter4.entities.type.Gender;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,7 +17,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,9 +37,10 @@ public class Patient {
 
     private LocalDateTime createdDate;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "patient_insurance", unique = true)
     private Insurance insurance; //Owning Side
 
-    @OneToMany(mappedBy = "patient")
+    @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "patient")
     private Set<Appointment> appointments=new HashSet<>(); //Inverse Side
 }

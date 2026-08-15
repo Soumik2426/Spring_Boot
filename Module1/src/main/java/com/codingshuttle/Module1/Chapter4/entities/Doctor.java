@@ -12,7 +12,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString
 public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +26,7 @@ public class Doctor {
     @Column(nullable = false, unique = true, length = 100)
     private String email;
 
-    @OneToMany(mappedBy = "doctor")
+    @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "doctor")
     private Set<Appointment> appointments=new HashSet<>(); //Inverse Side
 
     @OneToOne(mappedBy = "headDoctor")

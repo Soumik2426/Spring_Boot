@@ -2,8 +2,6 @@ package com.codingshuttle.Module1.Chapter4.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-
-import javax.print.Doc;
 import java.time.LocalDateTime;
 
 @Entity
@@ -11,7 +9,6 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Builder
 public class Appointment {
     @Id
