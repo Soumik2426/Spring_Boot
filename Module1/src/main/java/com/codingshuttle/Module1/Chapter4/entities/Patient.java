@@ -5,6 +5,7 @@ import com.codingshuttle.Module1.Chapter4.entities.type.Gender;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Fetch;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -37,7 +38,7 @@ public class Patient {
 
     private LocalDateTime createdDate;
 
-    @OneToOne(cascade = {CascadeType.ALL})
+    @OneToOne(orphanRemoval = true, cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @JoinColumn(name = "patient_insurance", unique = true)
     private Insurance insurance; //Owning Side
 

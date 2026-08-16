@@ -37,7 +37,8 @@ public class CascadeTest {
         var updatedInsurance=insuranceService.assignInsurance(insurance, 1L);
         System.out.println(updatedInsurance);
 
-        patientService.deletePatient(1L);
+        var patient=insuranceService.removeInsurance(1L);
+        System.out.println(patient);
     }
 
     @Test
@@ -51,6 +52,8 @@ public class CascadeTest {
 
         patientService.deletePatient(5L);
     }
+
+
 
     @Test
     public void Test(){
