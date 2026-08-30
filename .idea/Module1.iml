@@ -5,6 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Module1/src/main/java/com/codingshuttle/Module1/Chapter1" />
       <excludeFolder url="file://$MODULE_DIR$/Module1/src/main/java/com/codingshuttle/Module1/Chapter2" />
       <excludeFolder url="file://$MODULE_DIR$/Module1/src/main/java/com/codingshuttle/Module1/Chapter3" />
+      <excludeFolder url="file://$MODULE_DIR$/Module1/src/main/java/com/codingshuttle/Module1/Chapter4" />
     </content>
   </component>
 </module>
