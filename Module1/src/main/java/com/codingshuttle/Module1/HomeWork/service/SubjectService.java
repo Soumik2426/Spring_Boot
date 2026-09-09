@@ -7,7 +7,7 @@ import jakarta.validation.Valid;
 import java.util.UUID;
 
 public interface SubjectService {
-    SubjectResponse createSubject(@Valid SubjectRequest subjectRequest);
+    SubjectResponse createSubject(@Valid SubjectRequest subjectRequest, UUID professorId);
 
     Void deleteSubject(UUID id);
 }

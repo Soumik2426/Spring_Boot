@@ -4,6 +4,7 @@ import java.util.UUID;
 
 public record SubjectResponse(
         UUID id,
-        String title
+        String title,
+        UUID professor_id
 ) {
 }

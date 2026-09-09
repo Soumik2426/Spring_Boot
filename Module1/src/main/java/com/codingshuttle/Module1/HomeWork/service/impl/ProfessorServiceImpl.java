@@ -4,7 +4,6 @@ import com.codingshuttle.Module1.HomeWork.dto.request.ProfessorRequest;
 import com.codingshuttle.Module1.HomeWork.dto.response.ProfessorResponse;
 import com.codingshuttle.Module1.HomeWork.entity.Professor;
 import com.codingshuttle.Module1.HomeWork.repository.ProfessorRepository;
-import com.codingshuttle.Module1.HomeWork.repository.SubjectRepository;
 import com.codingshuttle.Module1.HomeWork.service.ProfessorService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +18,6 @@ import java.util.UUID;
 @Slf4j
 public class ProfessorServiceImpl implements ProfessorService {
     private final ProfessorRepository professorRepository;
-    private final SubjectRepository subjectRepository;
 
     //To create a professor
     @Override

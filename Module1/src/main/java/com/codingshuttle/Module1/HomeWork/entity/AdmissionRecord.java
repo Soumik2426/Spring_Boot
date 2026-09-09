@@ -13,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class AdmissionRecord {
+public class AdmissionRecord extends AuditableEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;

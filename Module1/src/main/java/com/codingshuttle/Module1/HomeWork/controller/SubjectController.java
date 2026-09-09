@@ -18,10 +18,10 @@ public class SubjectController {
     private final SubjectService subjectService;
 
     //To create a subject
-    @PostMapping("/create")
-    public ResponseEntity<SubjectResponse> createSubject(@RequestBody @Valid SubjectRequest subjectRequest){
+    @PostMapping("/create/{professorId}")
+    public ResponseEntity<SubjectResponse> createSubject(@RequestBody @Valid SubjectRequest subjectRequest, @PathVariable UUID professorId){
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(subjectService.createSubject(subjectRequest));
+                .body(subjectService.createSubject(subjectRequest, professorId));
     }
 
     //To delete a subject
