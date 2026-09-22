@@ -1,9 +1,9 @@
 package com.codingshuttle.Module1.HomeWork.clients.impl;
 
-import com.codingshuttle.Module1.HomeWork.advice.ApiResponse;
+import com.codingshuttle.Module1.HomeWork.restAdvice.ApiResponse;
 import com.codingshuttle.Module1.HomeWork.clients.userClient;
-import com.codingshuttle.Module1.HomeWork.dto.RegisterRequest;
-import com.codingshuttle.Module1.HomeWork.dto.UserResponse;
+import com.codingshuttle.Module1.HomeWork.dto.request.RegisterRequest;
+import com.codingshuttle.Module1.HomeWork.dto.response.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

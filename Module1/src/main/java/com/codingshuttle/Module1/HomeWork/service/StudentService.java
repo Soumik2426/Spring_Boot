@@ -8,6 +8,7 @@ import com.codingshuttle.Module1.HomeWork.dto.response.AssignSubjectToStudentRes
 import com.codingshuttle.Module1.HomeWork.dto.response.StudentResponse;
 import jakarta.validation.Valid;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface StudentService {
@@ -18,4 +19,6 @@ public interface StudentService {
     AssignProfessorToStudentResponse assignProfessor(UUID studentId, @Valid AssignProfessorToStudentRequest assignProfessorToStudentRequest);
 
     AssignSubjectToStudentResponse assignSubject(UUID studentId, @Valid AssignSubjectToStudentRequest assignSubjectToStudentRequest);
+
+    List<StudentResponse> getAllStudents();
 }

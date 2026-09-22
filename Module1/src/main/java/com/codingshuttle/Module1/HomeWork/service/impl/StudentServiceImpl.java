@@ -21,6 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
@@ -124,5 +125,16 @@ public class StudentServiceImpl implements StudentService {
                 student.getId(),
                 subject.getId()
         );
+    }
+
+    @Override
+    public List<StudentResponse> getAllStudents() {
+        List<Student> students = studentRepository.findAll();
+        return students.stream()
+                .map(student -> new StudentResponse(
+                        student.getId(),
+                        student.getName(),
+                        student.getPhnNumber()))
+                .toList();
     }
 }

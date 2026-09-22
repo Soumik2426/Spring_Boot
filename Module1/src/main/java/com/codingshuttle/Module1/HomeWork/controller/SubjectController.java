@@ -1,6 +1,7 @@
 package com.codingshuttle.Module1.HomeWork.controller;
 
 import com.codingshuttle.Module1.HomeWork.dto.request.SubjectRequest;
+import com.codingshuttle.Module1.HomeWork.dto.response.StudentResponse;
 import com.codingshuttle.Module1.HomeWork.dto.response.SubjectResponse;
 import com.codingshuttle.Module1.HomeWork.service.SubjectService;
 import jakarta.validation.Valid;
@@ -9,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -29,5 +31,12 @@ public class SubjectController {
     public ResponseEntity<Void> deleteSubject(@PathVariable UUID Id){
         return ResponseEntity.status(HttpStatus.OK)
                 .body(subjectService.deleteSubject(Id));
+    }
+
+    //To get all subjects
+    @GetMapping("/getAll")
+    public ResponseEntity<List<SubjectResponse>> getAllSubjects() {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(subjectService.getAllSubjects());
     }
 }

@@ -3,6 +3,7 @@ package com.codingshuttle.Module1.HomeWork.service.impl;
 import com.codingshuttle.Module1.HomeWork.dto.request.ProfessorRequest;
 import com.codingshuttle.Module1.HomeWork.dto.response.ProfessorResponse;
 import com.codingshuttle.Module1.HomeWork.entity.Professor;
+import com.codingshuttle.Module1.HomeWork.entity.Student;
 import com.codingshuttle.Module1.HomeWork.repository.ProfessorRepository;
 import com.codingshuttle.Module1.HomeWork.service.ProfessorService;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
@@ -42,5 +44,16 @@ public class ProfessorServiceImpl implements ProfessorService {
 
         professorRepository.deleteById(id);
         return null;
+    }
+
+    @Override
+    public List<ProfessorResponse> getAllProfessors() {
+        List<Professor> professors = professorRepository.findAll();
+        return professors.stream()
+                .map(professor -> new ProfessorResponse(
+                        professor.getId(),
+                        professor.getTitle()
+                ))
+                .toList();
     }
 }

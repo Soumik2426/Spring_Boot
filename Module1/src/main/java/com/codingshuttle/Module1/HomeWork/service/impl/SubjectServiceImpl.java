@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
@@ -56,5 +57,17 @@ public class SubjectServiceImpl implements SubjectService {
         }
         subjectRepository.deleteById(id);
         return null;
+    }
+
+    @Override
+    public List<SubjectResponse> getAllSubjects() {
+        List<Subject> subjects = subjectRepository.findAll();
+        return subjects.stream()
+                .map(subject -> new SubjectResponse(
+                        subject.getId(),
+                        subject.getTitle(),
+                        subject.getProfessor().getId()
+                ))
+                .toList();
     }
 }

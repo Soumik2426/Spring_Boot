@@ -1,13 +1,15 @@
-package com.codingshuttle.Module1.HomeWork.advice;
+package com.codingshuttle.Module1.HomeWork.restAdvice;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import org.springframework.http.HttpStatus;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class ApiError {
     private HttpStatus status;
     private String message;
