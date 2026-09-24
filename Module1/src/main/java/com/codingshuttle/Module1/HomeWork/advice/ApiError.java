@@ -1,4 +1,4 @@
-package com.codingshuttle.Module1.Chapter2.Advices;
+package com.codingshuttle.Module1.HomeWork.advice;
 
 import lombok.Builder;
 import lombok.Data;

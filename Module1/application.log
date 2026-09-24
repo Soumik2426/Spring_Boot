@@ -1,0 +1,123 @@
+2026-09-14T00:17:10.964+05:30  INFO 22024 --- [Module1] [main] com.codingshuttle.Module1.JwtTest        : Starting JwtTest using Java 25 with PID 22024 (started by SOUMIK in C:\Users\SOUMIK\Downloads\Module1\Module1)
+2026-09-14T00:17:10.969+05:30  INFO 22024 --- [Module1] [main] com.codingshuttle.Module1.JwtTest        : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T00:17:12.250+05:30  INFO 22024 --- [Module1] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-14T00:17:12.354+05:30  INFO 22024 --- [Module1] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 12 JPA repository interfaces.
+2026-09-14T00:17:12.982+05:30  INFO 22024 --- [Module1] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-14T00:17:13.163+05:30  INFO 22024 --- [Module1] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@278de2b2
+2026-09-14T00:17:13.165+05:30  INFO 22024 --- [Module1] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-14T00:17:13.286+05:30  INFO 22024 --- [Module1] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-14T00:17:13.364+05:30  INFO 22024 --- [Module1] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-09-14T00:17:13.796+05:30  INFO 22024 --- [Module1] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-14T00:17:13.843+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-14T00:17:13.862+05:30  INFO 22024 --- [Module1] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/college_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.14
+	Default catalog/schema: college_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-14T00:17:14.864+05:30  INFO 22024 --- [Module1] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-14T00:17:15.124+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-09-14T00:17:15.124+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : constraint "ukrtauc18issrejt60w59k9cda1" of relation "department" does not exist, skipping
+2026-09-14T00:17:15.132+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-09-14T00:17:15.133+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : constraint "ukealcyc6c762rjraq2yw6fg7f1" of relation "department" does not exist, skipping
+2026-09-14T00:17:15.141+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-09-14T00:17:15.141+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : constraint "ukjdtgexk368pq6d2yb3neec59d" of relation "doctor" does not exist, skipping
+2026-09-14T00:17:15.166+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-09-14T00:17:15.166+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : constraint "ukr3d6ploy7jydmj8lfxflaofgy" of relation "employees" does not exist, skipping
+2026-09-14T00:17:15.176+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-09-14T00:17:15.176+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : constraint "ukdgohdca0a4fo8jgwxgo4kryii" of relation "employees" does not exist, skipping
+2026-09-14T00:17:15.184+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-09-14T00:17:15.184+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : constraint "uk7rbxwbe5osbdxdxv1nx6xp5q4" of relation "insurance" does not exist, skipping
+2026-09-14T00:17:15.192+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-09-14T00:17:15.193+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : constraint "uk118wmanbr7bxtcx2xwacs9h0t" of relation "patient" does not exist, skipping
+2026-09-14T00:17:15.208+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-09-14T00:17:15.209+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : constraint "uk383i0awxqlq7pc33hil7afbgo" of relation "product" does not exist, skipping
+2026-09-14T00:17:15.217+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : HHH000247: ErrorCode: 0, SQLState: 00000
+2026-09-14T00:17:15.217+05:30  WARN 22024 --- [Module1] [main] org.hibernate.orm.jdbc.warn              : constraint "ukbmi8i9sv2dl0ixjy25ois8t5l" of relation "product" does not exist, skipping
+2026-09-14T00:17:15.272+05:30  INFO 22024 --- [Module1] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-14T00:17:15.393+05:30  INFO 22024 --- [Module1] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-14T00:17:16.673+05:30  WARN 22024 --- [Module1] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-14T00:17:16.945+05:30  INFO 22024 --- [Module1] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsService
+2026-09-14T00:17:17.755+05:30  INFO 22024 --- [Module1] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-09-14T00:17:17.813+05:30  INFO 22024 --- [Module1] [main] com.codingshuttle.Module1.JwtTest        : Started JwtTest in 7.201 seconds (process running for 8.496)
+2026-09-14T00:17:17.818+05:30  WARN 22024 --- [Module1] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-14T00:17:17.818+05:30  WARN 22024 --- [Module1] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-14T00:17:18.253+05:30  INFO 22024 --- [Module1] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-14T00:17:18.256+05:30  INFO 22024 --- [Module1] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-14T00:17:18.262+05:30  INFO 22024 --- [Module1] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-14T00:20:15.178+05:30  INFO 20300 --- [Module1] [main] com.codingshuttle.Module1.JwtTest        : Starting JwtTest using Java 25 with PID 20300 (started by SOUMIK in C:\Users\SOUMIK\Downloads\Module1\Module1)
+2026-09-14T00:20:15.180+05:30  INFO 20300 --- [Module1] [main] com.codingshuttle.Module1.JwtTest        : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T00:20:16.326+05:30  INFO 20300 --- [Module1] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-14T00:20:16.457+05:30  INFO 20300 --- [Module1] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 121 ms. Found 12 JPA repository interfaces.
+2026-09-14T00:20:17.163+05:30  INFO 20300 --- [Module1] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-14T00:20:17.337+05:30  INFO 20300 --- [Module1] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3cf4dec7
+2026-09-14T00:20:17.338+05:30  INFO 20300 --- [Module1] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-14T00:20:17.474+05:30  INFO 20300 --- [Module1] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-14T00:20:17.548+05:30  INFO 20300 --- [Module1] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-09-14T00:20:18.072+05:30  INFO 20300 --- [Module1] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-14T00:20:18.115+05:30  WARN 20300 --- [Module1] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-14T00:20:18.133+05:30  INFO 20300 --- [Module1] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/college_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.14
+	Default catalog/schema: college_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-14T00:20:19.143+05:30  INFO 20300 --- [Module1] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-14T00:20:19.238+05:30  INFO 20300 --- [Module1] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-14T00:20:19.321+05:30  INFO 20300 --- [Module1] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-14T00:20:20.547+05:30  WARN 20300 --- [Module1] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-14T00:20:20.792+05:30  INFO 20300 --- [Module1] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsService
+2026-09-14T00:20:21.525+05:30  INFO 20300 --- [Module1] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-09-14T00:20:21.574+05:30  INFO 20300 --- [Module1] [main] com.codingshuttle.Module1.JwtTest        : Started JwtTest in 6.662 seconds (process running for 8.02)
+2026-09-14T00:20:21.582+05:30  WARN 20300 --- [Module1] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-14T00:20:21.583+05:30  WARN 20300 --- [Module1] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-14T00:20:21.982+05:30  INFO 20300 --- [Module1] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-14T00:20:21.985+05:30  INFO 20300 --- [Module1] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-14T00:20:21.993+05:30  INFO 20300 --- [Module1] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-14T00:20:43.172+05:30  INFO 18188 --- [Module1] [main] com.codingshuttle.Module1.JwtTest        : Starting JwtTest using Java 25 with PID 18188 (started by SOUMIK in C:\Users\SOUMIK\Downloads\Module1\Module1)
+2026-09-14T00:20:43.174+05:30  INFO 18188 --- [Module1] [main] com.codingshuttle.Module1.JwtTest        : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T00:20:44.509+05:30  INFO 18188 --- [Module1] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-14T00:20:44.698+05:30  INFO 18188 --- [Module1] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 177 ms. Found 12 JPA repository interfaces.
+2026-09-14T00:20:45.795+05:30  INFO 18188 --- [Module1] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-14T00:20:46.109+05:30  INFO 18188 --- [Module1] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@370225c7
+2026-09-14T00:20:46.112+05:30  INFO 18188 --- [Module1] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-14T00:20:46.332+05:30  INFO 18188 --- [Module1] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-14T00:20:46.453+05:30  INFO 18188 --- [Module1] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-09-14T00:20:47.239+05:30  INFO 18188 --- [Module1] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-14T00:20:47.319+05:30  WARN 18188 --- [Module1] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-14T00:20:47.344+05:30  INFO 18188 --- [Module1] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/college_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.14
+	Default catalog/schema: college_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-14T00:20:48.625+05:30  INFO 18188 --- [Module1] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-14T00:20:48.718+05:30  INFO 18188 --- [Module1] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-14T00:20:48.853+05:30  INFO 18188 --- [Module1] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-14T00:20:50.755+05:30  WARN 18188 --- [Module1] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-14T00:20:51.245+05:30  INFO 18188 --- [Module1] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsService
+2026-09-14T00:20:52.316+05:30  INFO 18188 --- [Module1] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-09-14T00:20:52.396+05:30  INFO 18188 --- [Module1] [main] com.codingshuttle.Module1.JwtTest        : Started JwtTest in 9.519 seconds (process running for 10.796)
+2026-09-14T00:20:52.403+05:30  WARN 18188 --- [Module1] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-14T00:20:52.403+05:30  WARN 18188 --- [Module1] [main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-14T00:20:52.932+05:30  INFO 18188 --- [Module1] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-14T00:20:52.936+05:30  INFO 18188 --- [Module1] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-14T00:20:52.944+05:30  INFO 18188 --- [Module1] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

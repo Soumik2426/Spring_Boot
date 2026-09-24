@@ -1,0 +1,42 @@
+package com.codingshuttle.Module1.HomeWork.controller;
+
+import com.codingshuttle.Module1.HomeWork.dto.request.SubjectRequest;
+import com.codingshuttle.Module1.HomeWork.dto.response.StudentResponse;
+import com.codingshuttle.Module1.HomeWork.dto.response.SubjectResponse;
+import com.codingshuttle.Module1.HomeWork.service.SubjectService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.UUID;
+
+@RestController
+@RequestMapping("/v1/subjects")
+@RequiredArgsConstructor
+public class SubjectController {
+    private final SubjectService subjectService;
+
+    //To create a subject
+    @PostMapping("/create/{professorId}")
+    public ResponseEntity<SubjectResponse> createSubject(@RequestBody @Valid SubjectRequest subjectRequest, @PathVariable UUID professorId){
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(subjectService.createSubject(subjectRequest, professorId));
+    }
+
+    //To delete a subject
+    @DeleteMapping("/delete/{Id}")
+    public ResponseEntity<Void> deleteSubject(@PathVariable UUID Id){
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(subjectService.deleteSubject(Id));
+    }
+
+    //To get all subjects
+    @GetMapping("/getAll")
+    public ResponseEntity<List<SubjectResponse>> getAllSubjects() {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(subjectService.getAllSubjects());
+    }
+}
