@@ -1,6 +1,7 @@
 package com.codingshuttle.Module1.HomeWork.config;
 
 import com.codingshuttle.Module1.HomeWork.customSecurityFilter.JwtAuthFilter;
+import com.codingshuttle.Module1.HomeWork.handler.OAuth2SuccessHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +23,7 @@ import static com.codingshuttle.Module1.HomeWork.common.enums.Role.ADMIN;
 public class WebSecurityConfig {
 
     private final JwtAuthFilter jwtAuthFilter;
+    private final OAuth2SuccessHandler oAuth2SuccessHandler;
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity)throws Exception{
@@ -34,7 +36,8 @@ public class WebSecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .oauth2Login(oauth2Config -> oauth2Config
-                        .failureUrl("/login?error=true"));
+                        .failureUrl("/login?error=true")
+                        .successHandler(oAuth2SuccessHandler));
         return httpSecurity.build();
     }
 

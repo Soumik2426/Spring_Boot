@@ -583,3 +583,154 @@ Caused by: java.lang.ClassNotFoundException: org.springframework.security.oauth2
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
 	... 55 common frames omitted
 
+2026-09-26T00:48:07.661+05:30  INFO 16496 --- [Module1] [restartedMain] c.c.Module1.Module1Application           : Starting Module1Application using Java 21.0.11 with PID 16496 (C:\Users\SOUMIK\Downloads\Module1\Module1\target\classes started by SOUMIK in C:\Users\SOUMIK\Downloads\Module1)
+2026-09-26T00:48:07.663+05:30  INFO 16496 --- [Module1] [restartedMain] c.c.Module1.Module1Application           : No active profile set, falling back to 1 default profile: "default"
+2026-09-26T00:48:07.704+05:30  INFO 16496 --- [Module1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-26T00:48:07.704+05:30  INFO 16496 --- [Module1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-26T00:48:08.755+05:30  INFO 16496 --- [Module1] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-26T00:48:08.848+05:30  INFO 16496 --- [Module1] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 5 JPA repository interfaces.
+2026-09-26T00:48:09.730+05:30  INFO 16496 --- [Module1] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9000 (http)
+2026-09-26T00:48:09.744+05:30  INFO 16496 --- [Module1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-26T00:48:09.744+05:30  INFO 16496 --- [Module1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-09-26T00:48:09.796+05:30  INFO 16496 --- [Module1] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2092 ms
+2026-09-26T00:48:09.908+05:30  INFO 16496 --- [Module1] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-26T00:48:10.066+05:30  INFO 16496 --- [Module1] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@308aa51e
+2026-09-26T00:48:10.068+05:30  INFO 16496 --- [Module1] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-26T00:48:10.167+05:30  INFO 16496 --- [Module1] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-26T00:48:10.245+05:30  INFO 16496 --- [Module1] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-09-26T00:48:10.765+05:30  INFO 16496 --- [Module1] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-26T00:48:10.843+05:30  WARN 16496 --- [Module1] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-26T00:48:10.864+05:30  INFO 16496 --- [Module1] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/college_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.14
+	Default catalog/schema: college_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-26T00:48:11.907+05:30  INFO 16496 --- [Module1] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-26T00:48:12.124+05:30  INFO 16496 --- [Module1] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-26T00:48:12.192+05:30  INFO 16496 --- [Module1] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-26T00:48:12.593+05:30  WARN 16496 --- [Module1] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-26T00:48:13.206+05:30  INFO 16496 --- [Module1] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2026-09-26T00:48:13.557+05:30  WARN 16496 --- [Module1] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0: Error creating bean with name 'securityFilterChain' defined in class path resource [com/codingshuttle/Module1/HomeWork/config/WebSecurityConfig.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: No qualifying bean of type 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository' available
+2026-09-26T00:48:13.558+05:30  INFO 16496 --- [Module1] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-26T00:48:13.561+05:30  INFO 16496 --- [Module1] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-26T00:48:13.568+05:30  INFO 16496 --- [Module1] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-26T00:48:13.572+05:30  INFO 16496 --- [Module1] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-09-26T00:48:13.583+05:30  INFO 16496 --- [Module1] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-26T00:48:13.599+05:30 ERROR 16496 --- [Module1] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method setFilterChains in org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration required a bean of type 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository' in your configuration.
+
+2026-09-26T00:50:09.864+05:30  INFO 9304 --- [Module1] [restartedMain] c.c.Module1.Module1Application           : Starting Module1Application using Java 21.0.11 with PID 9304 (C:\Users\SOUMIK\Downloads\Module1\Module1\target\classes started by SOUMIK in C:\Users\SOUMIK\Downloads\Module1)
+2026-09-26T00:50:09.867+05:30  INFO 9304 --- [Module1] [restartedMain] c.c.Module1.Module1Application           : No active profile set, falling back to 1 default profile: "default"
+2026-09-26T00:50:09.925+05:30  INFO 9304 --- [Module1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-26T00:50:09.926+05:30  INFO 9304 --- [Module1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-26T00:50:11.046+05:30  INFO 9304 --- [Module1] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-26T00:50:11.152+05:30  INFO 9304 --- [Module1] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 5 JPA repository interfaces.
+2026-09-26T00:50:12.215+05:30  INFO 9304 --- [Module1] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9000 (http)
+2026-09-26T00:50:12.237+05:30  INFO 9304 --- [Module1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-26T00:50:12.238+05:30  INFO 9304 --- [Module1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-09-26T00:50:12.299+05:30  INFO 9304 --- [Module1] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2373 ms
+2026-09-26T00:50:12.475+05:30  INFO 9304 --- [Module1] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-26T00:50:12.712+05:30  INFO 9304 --- [Module1] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@970239c
+2026-09-26T00:50:12.715+05:30  INFO 9304 --- [Module1] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-26T00:50:12.841+05:30  INFO 9304 --- [Module1] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-26T00:50:12.958+05:30  INFO 9304 --- [Module1] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-09-26T00:50:13.665+05:30  INFO 9304 --- [Module1] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-26T00:50:13.756+05:30  WARN 9304 --- [Module1] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-26T00:50:13.785+05:30  INFO 9304 --- [Module1] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/college_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.14
+	Default catalog/schema: college_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-26T00:50:15.192+05:30  INFO 9304 --- [Module1] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-26T00:50:15.395+05:30  INFO 9304 --- [Module1] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-26T00:50:15.451+05:30  INFO 9304 --- [Module1] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-26T00:50:15.851+05:30  WARN 9304 --- [Module1] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-26T00:50:16.017+05:30  INFO 9304 --- [Module1] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2026-09-26T00:50:16.819+05:30  INFO 9304 --- [Module1] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-09-26T00:50:16.885+05:30  INFO 9304 --- [Module1] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9000 (http) with context path '/'
+2026-09-26T00:50:16.958+05:30  INFO 9304 --- [Module1] [restartedMain] c.c.Module1.Module1Application           : Started Module1Application in 7.647 seconds (process running for 8.754)
+2026-09-26T00:50:16.965+05:30  WARN 9304 --- [Module1] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-26T00:50:16.966+05:30  WARN 9304 --- [Module1] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-26T00:50:17.406+05:30  INFO 9304 --- [Module1] [RMI TCP Connection(4)-192.168.29.47] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-26T00:50:17.407+05:30  INFO 9304 --- [Module1] [RMI TCP Connection(4)-192.168.29.47] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-26T00:50:17.409+05:30  INFO 9304 --- [Module1] [RMI TCP Connection(4)-192.168.29.47] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-09-26T00:51:05.188+05:30  INFO 9304 --- [Module1] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-26T00:51:05.196+05:30  INFO 9304 --- [Module1] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-09-26T00:51:05.204+05:30  INFO 9304 --- [Module1] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-26T00:51:05.207+05:30  INFO 9304 --- [Module1] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-26T00:51:05.209+05:30  INFO 9304 --- [Module1] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-26T01:03:01.988+05:30  INFO 15136 --- [Module1] [restartedMain] c.c.Module1.Module1Application           : Starting Module1Application using Java 21.0.11 with PID 15136 (C:\Users\SOUMIK\Downloads\Module1\Module1\target\classes started by SOUMIK in C:\Users\SOUMIK\Downloads\Module1)
+2026-09-26T01:03:01.997+05:30  INFO 15136 --- [Module1] [restartedMain] c.c.Module1.Module1Application           : No active profile set, falling back to 1 default profile: "default"
+2026-09-26T01:03:02.104+05:30  INFO 15136 --- [Module1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-26T01:03:02.105+05:30  INFO 15136 --- [Module1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-26T01:03:03.656+05:30  INFO 15136 --- [Module1] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-26T01:03:03.733+05:30  INFO 15136 --- [Module1] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 5 JPA repository interfaces.
+2026-09-26T01:03:04.597+05:30  INFO 15136 --- [Module1] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9000 (http)
+2026-09-26T01:03:04.613+05:30  INFO 15136 --- [Module1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-26T01:03:04.613+05:30  INFO 15136 --- [Module1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-09-26T01:03:04.662+05:30  INFO 15136 --- [Module1] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2555 ms
+2026-09-26T01:03:04.833+05:30  INFO 15136 --- [Module1] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-26T01:03:05.071+05:30  INFO 15136 --- [Module1] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@245dde05
+2026-09-26T01:03:05.073+05:30  INFO 15136 --- [Module1] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-26T01:03:05.217+05:30  INFO 15136 --- [Module1] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-26T01:03:05.341+05:30  INFO 15136 --- [Module1] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-09-26T01:03:05.952+05:30  INFO 15136 --- [Module1] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-26T01:03:06.025+05:30  WARN 15136 --- [Module1] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-09-26T01:03:06.049+05:30  INFO 15136 --- [Module1] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/college_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.14
+	Default catalog/schema: college_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-26T01:03:07.334+05:30  INFO 15136 --- [Module1] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-26T01:03:07.557+05:30  INFO 15136 --- [Module1] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-26T01:03:07.637+05:30  INFO 15136 --- [Module1] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-26T01:03:08.157+05:30  WARN 15136 --- [Module1] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-26T01:03:08.392+05:30  INFO 15136 --- [Module1] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userService
+2026-09-26T01:03:09.302+05:30  INFO 15136 --- [Module1] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-09-26T01:03:09.376+05:30  INFO 15136 --- [Module1] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9000 (http) with context path '/'
+2026-09-26T01:03:09.385+05:30  INFO 15136 --- [Module1] [restartedMain] c.c.Module1.Module1Application           : Started Module1Application in 8.529 seconds (process running for 9.584)
+2026-09-26T01:03:09.391+05:30  WARN 15136 --- [Module1] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-09-26T01:03:09.392+05:30  WARN 15136 --- [Module1] [restartedMain] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-09-26T01:03:09.575+05:30  INFO 15136 --- [Module1] [RMI TCP Connection(2)-192.168.29.47] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-26T01:03:09.576+05:30  INFO 15136 --- [Module1] [RMI TCP Connection(2)-192.168.29.47] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-26T01:03:09.578+05:30  INFO 15136 --- [Module1] [RMI TCP Connection(2)-192.168.29.47] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-09-26T01:03:13.892+05:30  INFO 15136 --- [Module1] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-26T01:03:13.900+05:30  INFO 15136 --- [Module1] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-09-26T01:03:13.907+05:30  INFO 15136 --- [Module1] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-26T01:03:13.910+05:30  INFO 15136 --- [Module1] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-26T01:03:13.919+05:30  INFO 15136 --- [Module1] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
