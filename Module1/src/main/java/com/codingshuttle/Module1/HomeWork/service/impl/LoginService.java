@@ -2,6 +2,7 @@ package com.codingshuttle.Module1.HomeWork.service.impl;
 
 import com.codingshuttle.Module1.HomeWork.dto.request.LoginRequest;
 import com.codingshuttle.Module1.HomeWork.dto.request.RegisterRequest;
+import com.codingshuttle.Module1.HomeWork.dto.response.LoginResponse;
 import com.codingshuttle.Module1.HomeWork.dto.response.UserResponse;
 import com.codingshuttle.Module1.HomeWork.entity.UserEntity;
 import com.codingshuttle.Module1.HomeWork.repository.UserEntityRepository;
@@ -15,6 +16,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -33,6 +36,7 @@ public class LoginService {
                 .lastName(registerRequest.getLastName())
                 .email(registerRequest.getEmail())
                 .password(passwordEncoder.encode(registerRequest.getPassword()))
+                .roles(registerRequest.getRoles())
                 .build();
 
         userEntity=userEntityRepository.save(userEntity);
@@ -45,7 +49,7 @@ public class LoginService {
         );
     }
 
-    public String logIn(@Valid LoginRequest loginRequest) {
+    public LoginResponse logIn(@Valid LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         loginRequest.getEmail(),
@@ -56,12 +60,26 @@ public class LoginService {
         UserEntity userEntity =
                 (UserEntity) authentication.getPrincipal();
 
-        String token = jwtService.generateToken(userEntity);
+        String accessToken = jwtService.generateAccessToken(userEntity);
+        String refreshToken = jwtService.generateRefreshToken(userEntity);
+        return new LoginResponse(
+                userEntity.getId(),
+                accessToken,
+                refreshToken
+        );
 
-        System.out.println("TOKEN TYPE = " + token.getClass());
-        System.out.println("TOKEN = " + token);
-
-        return token;
     }
 
+    public LoginResponse refreshToken(String refreshToken) {
+        UUID userId = jwtService.getUserIdFromToken(refreshToken);
+        UserEntity userEntity = userEntityRepository.findById(userId)
+                .orElseThrow(()-> new NoSuchElementException("User not found with id: " + userId));
+        String accessToken = jwtService.generateAccessToken(userEntity);
+
+        return new LoginResponse(
+                userEntity.getId(),
+                accessToken,
+                refreshToken
+        );
+    }
 }

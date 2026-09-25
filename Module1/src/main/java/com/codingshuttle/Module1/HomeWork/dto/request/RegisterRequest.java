@@ -1,9 +1,12 @@
 package com.codingshuttle.Module1.HomeWork.dto.request;
 
+import com.codingshuttle.Module1.HomeWork.common.enums.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.*;
+
+import java.util.Set;
 
 @Getter
 @Setter
@@ -28,4 +31,6 @@ public class RegisterRequest {
 
     @NotBlank(message="Password is required")
     private String password;
+
+    private Set<Role> roles;
 }
