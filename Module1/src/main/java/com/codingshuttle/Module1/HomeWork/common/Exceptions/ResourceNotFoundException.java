@@ -1,4 +1,4 @@
-package com.codingshuttle.Module1.HomeWork.Exceptions;
+package com.codingshuttle.Module1.HomeWork.common.Exceptions;
 
 public class ResourceNotFoundException extends RuntimeException {
     public ResourceNotFoundException(String message) {

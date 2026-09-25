@@ -1,6 +1,6 @@
 package com.codingshuttle.Module1.HomeWork.advice;
 
-import com.codingshuttle.Module1.HomeWork.Exceptions.ResourceNotFoundException;
+import com.codingshuttle.Module1.HomeWork.common.Exceptions.ResourceNotFoundException;
 import io.jsonwebtoken.JwtException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

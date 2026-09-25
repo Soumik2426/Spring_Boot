@@ -27,7 +27,7 @@ public class JwtTest {
                 .password("password123")
                 .build();
 
-        String token = jwtService.generateToken(user);
+        String token = jwtService.generateAccessToken(user);
         System.out.println(token);
         UUID ID = jwtService.getUserIdFromToken(token);
         System.out.println(ID);
