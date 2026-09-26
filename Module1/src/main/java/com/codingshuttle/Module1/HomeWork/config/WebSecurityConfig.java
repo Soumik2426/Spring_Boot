@@ -1,9 +1,12 @@
 package com.codingshuttle.Module1.HomeWork.config;
 
+import com.codingshuttle.Module1.HomeWork.common.enums.Role;
 import com.codingshuttle.Module1.HomeWork.customSecurityFilter.JwtAuthFilter;
+import com.codingshuttle.Module1.HomeWork.handler.OAuth2SuccessHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -22,19 +25,23 @@ import static com.codingshuttle.Module1.HomeWork.common.enums.Role.ADMIN;
 public class WebSecurityConfig {
 
     private final JwtAuthFilter jwtAuthFilter;
+    private final OAuth2SuccessHandler oAuth2SuccessHandler;
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity)throws Exception{
         httpSecurity
                 .authorizeHttpRequests(auth->auth
                         .requestMatchers("/v1/auth","/v1/auth/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/v1/students","/v1/students/**").permitAll()
+                        .requestMatchers("/v1/students","/v1/students/**").hasRole(ADMIN.name())
                         .anyRequest().authenticated())
                 .csrf(csrfConfig -> csrfConfig.disable())
                 .sessionManagement(sessionConfig -> sessionConfig
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .oauth2Login(oauth2Config -> oauth2Config
-                        .failureUrl("/login?error=true"));
+                        .failureUrl("/login?error=true")
+                        .successHandler(oAuth2SuccessHandler));
         return httpSecurity.build();
     }
 

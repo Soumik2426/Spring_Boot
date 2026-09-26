@@ -1,12 +1,10 @@
 package com.codingshuttle.Module1.HomeWork.controller;
 
-import com.codingshuttle.Module1.HomeWork.advice.ApiResponse;
 import com.codingshuttle.Module1.HomeWork.dto.request.LoginRequest;
 import com.codingshuttle.Module1.HomeWork.dto.request.RegisterRequest;
 import com.codingshuttle.Module1.HomeWork.dto.response.LoginResponse;
 import com.codingshuttle.Module1.HomeWork.dto.response.UserResponse;
-import com.codingshuttle.Module1.HomeWork.service.impl.LoginService;
-import com.codingshuttle.Module1.HomeWork.service.impl.UserService;
+import com.codingshuttle.Module1.HomeWork.service.LoginService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
