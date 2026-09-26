@@ -2,25 +2,27 @@ package com.codingshuttle.Module1.HomeWork.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Table(name = "admission_records")
+@Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity
-public class AdmissionRecord extends AuditableEntity{
+public class Session {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(name ="fees", nullable = false)
-    private Integer fees;
+    private String refreshToken;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    private Student student;
+    @CreationTimestamp
+    private LocalDateTime lastUsedAt;
 
+    @ManyToOne
+    private UserEntity user;
 }

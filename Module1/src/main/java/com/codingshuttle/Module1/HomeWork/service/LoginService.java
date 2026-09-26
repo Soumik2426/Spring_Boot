@@ -1,4 +1,4 @@
-package com.codingshuttle.Module1.HomeWork.service.impl;
+package com.codingshuttle.Module1.HomeWork.service;
 
 import com.codingshuttle.Module1.HomeWork.dto.request.LoginRequest;
 import com.codingshuttle.Module1.HomeWork.dto.request.RegisterRequest;
@@ -6,7 +6,6 @@ import com.codingshuttle.Module1.HomeWork.dto.response.LoginResponse;
 import com.codingshuttle.Module1.HomeWork.dto.response.UserResponse;
 import com.codingshuttle.Module1.HomeWork.entity.UserEntity;
 import com.codingshuttle.Module1.HomeWork.repository.UserEntityRepository;
-import com.codingshuttle.Module1.HomeWork.service.JwtService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,7 +15,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -26,6 +24,7 @@ public class LoginService {
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
     private final JwtService jwtService;
+    private final SessionService sessionService;
 
     public UserResponse signUp(@Valid RegisterRequest registerRequest) {
         if(userEntityRepository.findByEmail(registerRequest.getEmail()).isPresent()){
@@ -62,6 +61,7 @@ public class LoginService {
 
         String accessToken = jwtService.generateAccessToken(userEntity);
         String refreshToken = jwtService.generateRefreshToken(userEntity);
+        sessionService.generateSession(userEntity, refreshToken);
         return new LoginResponse(
                 userEntity.getId(),
                 accessToken,
@@ -72,6 +72,7 @@ public class LoginService {
 
     public LoginResponse refreshToken(String refreshToken) {
         UUID userId = jwtService.getUserIdFromToken(refreshToken);
+        sessionService.validateSession(refreshToken);
         UserEntity userEntity = userEntityRepository.findById(userId)
                 .orElseThrow(()-> new NoSuchElementException("User not found with id: " + userId));
         String accessToken = jwtService.generateAccessToken(userEntity);

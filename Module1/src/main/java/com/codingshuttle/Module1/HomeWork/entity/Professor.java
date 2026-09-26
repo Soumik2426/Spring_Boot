@@ -6,13 +6,14 @@ import lombok.*;
 import java.util.List;
 import java.util.UUID;
 
-@Entity
+
 @Table(name = "professors")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Entity
 public class Professor extends AuditableEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

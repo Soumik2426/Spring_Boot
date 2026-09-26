@@ -2,7 +2,7 @@ package com.codingshuttle.Module1.HomeWork.customSecurityFilter;
 
 import com.codingshuttle.Module1.HomeWork.entity.UserEntity;
 import com.codingshuttle.Module1.HomeWork.service.JwtService;
-import com.codingshuttle.Module1.HomeWork.service.impl.UserService;
+import com.codingshuttle.Module1.HomeWork.service.UserService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -44,9 +44,16 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             if(token!=null && SecurityContextHolder.getContext().getAuthentication()==null){
                 UUID userId = jwtService.getUserIdFromToken(token);
                 UserEntity userEntity = userService.getUserById(userId);
-                UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userEntity, null, null);
+                UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userEntity, null, userEntity.getAuthorities());
+                System.out.println("USER = " + userEntity.getEmail());
+                System.out.println("ROLES = " + userEntity.getRoles());
+                System.out.println("AUTHORITIES = " + userEntity.getAuthorities());
                 authenticationToken.setDetails((new WebAuthenticationDetailsSource().buildDetails(request)));
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+                System.out.println(
+                        "AUTH FROM CONTEXT = " +
+                                SecurityContextHolder.getContext().getAuthentication()
+                );
             }
             filterChain.doFilter(request,response);
         }catch(Exception e){
